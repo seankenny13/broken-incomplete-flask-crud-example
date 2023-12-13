@@ -1,5 +1,9 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
+<<<<<<< HEAD
     args: ['build', '-t', 'gcr.io/lab5-cc/flask-crud-app:$COMMIT_SHA', '.']
+=======
+    args: ['build', '-t', 'gcr.io/YOUR_PROJECT_ID/YOUR_IMAGE_NAME:$COMMIT_SHA', '.']
+>>>>>>> dd324d6d2f7a08fdb7b907e40f715548bea11172
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/lab5-cc/flask-crud-app:$COMMIT_SHA']
