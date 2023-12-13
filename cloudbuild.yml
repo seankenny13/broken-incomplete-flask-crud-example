@@ -1,20 +1,10 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args:
-      - 'build'
-      - '-t'
-      - 'gcr.io/lab5-cc/flask-crud-app:$COMMIT_SHA'
-      - '-f'
-      - 'Dockerfile.dockerfile'  # Specify the Dockerfile name
-      - '.'
-
+    args: ['build', '-t', 'gcr.io/lab5-cc/flask-crud-app:$COMMIT_SHA', '-f', 'Dockerfile.dockerfile', '.']
   - name: 'gcr.io/cloud-builders/docker'
-    args:
-      - 'push'
-      - 'gcr.io/lab5-cc/flask-crud-app:$COMMIT_SHA'
+    args: ['push', 'gcr.io/lab5-cc/flask-crud-app:$COMMIT_SHA']
 
-images:
-  - 'gcr.io/lab5-cc/flask-crud-app:$COMMIT_SHA'
+images: ['gcr.io/lab5-cc/flask-crud-app:$COMMIT_SHA']
 
 
 
